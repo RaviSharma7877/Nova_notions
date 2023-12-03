@@ -71,7 +71,7 @@ bp_manager = BlogPostManager()
 @app.route('/', methods=['GET'])
 def index():
      posts = bp_manager.get_all_posts()
-     return render_template('index.html', posts=posts)
+     return json_util.dumps(posts)
 
 @app.route('/static/<path:filename>')
 def serve_static(filename):
