@@ -73,6 +73,9 @@ def index():
      posts = bp_manager.get_all_posts()
      return json_util.dumps(posts)
 
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 @app.route('/add_data', methods=['POST'])
 def add_data():
