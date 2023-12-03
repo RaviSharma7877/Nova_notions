@@ -91,7 +91,7 @@ def add_data():
     except Exception as e:
         return jsonify({'Error': str(e)}), 500
 
-@app.route('/get_data/<string:post_id>', methods=['GET'])
+@app.route('/blog/posts/<string:post_id>', methods=['GET'])
 def get_post(post_id):
     post = bp_manager.get_post_by_id(post_id)
 
