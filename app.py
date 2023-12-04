@@ -8,7 +8,7 @@ from bson import ObjectId, json_util
 app = Flask(__name__)
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI', 'mongodb+srv://root:rootravi7877@cluster0.vwzslkb.mongodb.net/NovaNotions?retryWrites=true&w=majority')
 
-ALLOWED_KEYS = ['title', 'desc', 'time', 'img', 'summary', 'KeyElements', 'Tips', 'Conclusion']
+ALLOWED_KEYS = ['title', 'desc', 'time', 'img', 'summary', 'KeyElements', 'Tips', 'Conclusion', 'Strategies']
 
 def get_db():
     if 'db' not in g:
