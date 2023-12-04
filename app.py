@@ -4,8 +4,10 @@ from flask import Flask, jsonify, g, request, render_template, send_from_directo
 import os
 from flask_pymongo import MongoClient
 from bson import ObjectId, json_util
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI', 'mongodb+srv://root:rootravi7877@cluster0.vwzslkb.mongodb.net/NovaNotions?retryWrites=true&w=majority')
 
 ALLOWED_KEYS = ['title', 'desc', 'time', 'img', 'summary', 'KeyElements', 'Tips', 'Conclusion', 'Strategies']
